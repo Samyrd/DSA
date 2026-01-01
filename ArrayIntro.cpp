@@ -262,18 +262,41 @@
 //MINIMUM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>MAXIMUM
 
 //10. MAXIMUM...................................
-
-
-
-
-
-
+//#include<iostream>
+//#include<limits.h>
+//using namespace std;
+//
+//int main(){
+//	int i;
+//	int arr[]={5,10,15,20,40,80};
+//	int size=6;
+//	
+//	First Approach using limits.h
+////	int maxAns=INT_MIN;
+////	for(i=0;i<size;i++){
+////		if(arr[i]>maxAns){
+////			maxAns=arr[i];
+////		}
+////	}
+//	
+//	Second approach, initialising the first element to be the lowest or greates
+//	int maAns=arr[0];
+//	for(i=0;i<size;i++){
+//		if(arr[i]>maAns){
+//			maAns=arr[i];
+//		}
+//	}
+//	cout<<"The maximum is:"<<maAns<<endl;
+//	return 0;
+//}
 
 
 //11. Problem Statement
 //REVERSE OF ARRAY....***********************************
 //REVERSE OF ARRAY....***********************************
 //REVERSE OF ARRAY....***********************************
+
+
 //#include<iostream>
 //using namespace std;
 //
@@ -353,6 +376,31 @@
 
 
 
+
+
+//12. EXTREME POINTS IN AN ARRAY..
+// THIS HANDLES EVEN AND ODD NO. IN AN ARRAYS...
+//#include<iostream>
+//using namespace std;
+//
+//int main(){
+//	int arr[]={20,30,40,50,60};
+//	int size=5;
+//	int i,j;
+//	for(i=0,j=4;i<=j;i++,j--){
+//		if(i==j){                   //Handles the odd part in case found...
+//			cout<<arr[i];
+//		}
+//		else{
+//			cout<<arr[i]<<" ";
+//			swap(arr[i],arr[j]);
+//			cout<<arr[i]<<endl;
+//		}
+//		
+//	}
+//	return 0;
+//}
+
 //12. PROBLEM....
 //EXTREME POINT IN AN ARRAY
 
@@ -384,134 +432,6 @@
 //	return 0;
 //}
 
-
-//#include<iostream>
-//using namespace std;
-//
-//int main(){
-//	int arr[10],arr1[10];
-//	int i;
-//	cout<<"Enter Elements of the array:"<<endl;
-//	for(i=0;i<10;i++){
-//		cin>>arr[i];
-//	}
-//	cout<<"Elements of array before doubling:"<<endl;
-//		for(i=0;i<10;i++){
-//		cout<<arr[i]<<" ";
-//	}
-//	cout<<endl<<"Elements of the array after doubling it."<<endl;
-//	for(i=0;i<10;i++){
-//		arr[i]=2*arr[i];
-//		cout<<arr[i]<<" ";
-//	}
-//	
-//return 0;
-//}
-
-
-//#include<iostream>
-//using namespace std;
-//
-//int main(){
-//	int arr[5];
-//	int i;
-//	
-//	cout<<"Enter elements of an array:"<<endl;
-//	for(i=0;i<5;i++){
-//		cin>>arr[i];                            //taking input in the array
-//	}
-//	cout<<"The elements of the array is:"<<endl;
-//	for(i=0;i<5;i++){
-//		cout<<arr[i];							//printing the elements of array	
-//	}
-//	
-//	
-//	int sum=0;                                  //initialising the variable sum  
-//	for(i=0;i<5;i++){
-//		sum=sum+arr[i];							//calculating the sum
-//	}
-//	cout<<"The sum of elements of the array is:"<<sum<<endl;
-//	
-//return 0;
-//}
-
-//#include<iostream>
-//using namespace std;
-//int main(){
-//	int arr[5];
-//	int target;
-//	int i;
-//	
-//	cout<<"Enter the elements of the array."<<endl;
-//	for(i=0;i<5;i++){
-//		cin>>arr[i];
-//	}
-//	cout<<"The elements of the array is:"<<endl;
-//	for(i=0;i<5;i++){
-//		cout<<arr[i];
-//	}
-//	cout<<endl<<"Enter your target";
-//	cin>>target;
-//	
-//	bool flag=0;        
-//	/*Flag: To indicate loop ends or continue... when a certain condition is met...
-//	Initially, flag==0 means target is not found  AND  flag==1 means target is found..
-//	*/
-//	for(i=0;i<5;i++){
-//		if(arr[i]==target){
-//			flag=1;
-//			break;
-//		}
-//	}
-//	
-//	if(flag==1){
-//		cout<<"Target is found at index: "<<i<<endl;
-//	}
-//	else
-//		cout<<"Target is not found in the array."<<endl;
-//	
-//	
-//	
-//return 0;
-//}
-
-
-////IMPLEMENTING Linear Search without using flag variable...
-//#include<iostream>
-//using namespace std;
-//
-//bool linearSearch(int arr[], int size, int target){    //it only returns true or false not the index..
-//	for(int i=0;i<size;i++){
-//		if(arr[i]==target){
-//			return true;   //indicates target is found
-//		}
-//	}
-//	return false;   //indicates target is not found
-//}
-//
-//int main(){
-//	int size=5;
-//	int arr[size],i,target;
-//	cout<<"Enter elements of the array."<<endl;
-//	for(int i=0;i<size;i++){
-//		cin>>arr[i];
-//	}
-//	cout<<"Enter your target element."<<endl;
-//	cin>>target;
-//	
-//	bool answer=linearSearch(arr,size,target);
-//	if(answer==true){
-//		cout<<"Element is found <<endl;
-//	}
-//	else{
-//		cout<<"Element is not found."<<endl;
-//	}
-//
-//return 0;
-//}
-
-
-
 //ARRAY AND FUNCTIONS COMBINED..........
 //#include<iostream>
 //using namespace std;
@@ -536,46 +456,6 @@
 //	printArray(arr,size);
 //	return 0;
 //}
-
-#include<iostream>
-using namespace std;
-
-void ONE_ZEROCount(int arr[], int size){     //declaring and defining the function..
-	int OneCount=0, ZeroCount=0;
-	for(int i=0;i<size;i++){
-		if(arr[i]==0){
-			ZeroCount++;
-		}
-		else if( arr[i]==1){
-			OneCount++;
-		}		
-	}
-	//printing outside the loop..
-	if(ZeroCount==0  && OneCount==0){
-		cout<<"No zeroes or Ones are present."<<endl;
-	}
-	else{
-	cout<<"Number of zeroes is:"<<ZeroCount<<endl;
-	cout<<"Number of Ones is:"<<OneCount<<endl;
-		
-	}
-}
-
-int main(){
-	int size=5;
-	int arr[size],i;
-	cout<<"Enter the elements of the array:"<<endl;
-	for(i=0;i<size;i++){
-		cin>>arr[i];                      //taking input into the array..
-	}
-	ONE_ZEROCount(arr,size); //calling the function
-	return 0;
-}
-
-
-
-
-
 
 
 
