@@ -189,43 +189,145 @@
 //}
 
 //Just little changes in passing the arguments..
+//#include<iostream>
+//using namespace std;
+//
+//void TwoPairSum(int arr[],int n,int target){
+//	bool flag=0;
+//	for(int i=0;i<n;i++){
+//		for(int j=i+1;j<n;j++){
+//			if(arr[i]+arr[j]==target){
+//				flag=1;
+//				break;  //breaks the inner loop
+//			}
+//			
+//		}
+//		if(flag)
+//		break;
+//		
+//	}
+//	if(flag==1){
+//		cout<<"Target is found"<<endl;
+//	}
+//	if(flag==0){
+//		cout<<"Target is not found"<<endl;
+//	}
+//	
+//}
+//
+//int main(){
+//	int arr[]={0,-1,1,-3,2};
+//	int n=5;
+//	int target=-2;
+//	TwoPairSum(arr,n,target);
+//	return 0;
+//}
+
+//5.SHIFT ELEMENT BY -1: RIGHT SHIFT
+//#include<iostream>
+//using namespace std;
+//
+//void ShiftElementRight(int arr[],int size){
+//	int temp=arr[size-1];
+//	for(int i=size-1;i>0;i--){
+//		arr[i]=arr[i-1];
+//	}
+//	arr[0]=temp;
+//	for(int i=0;i<size;i++){
+//		cout<<i<<":"<<arr[i]<<" ";
+//	}
+//}
+//
+//int main(){
+//	int arr[]={10,20,30,40,50,60};
+//	int size=6;
+//	cout<<"Before Shifting: ";
+//	for(int i=0;i<size;i++){
+//		cout<<i<<":"<<arr[i]<<" ";
+//	}
+//	cout<<endl<<"Shifted to its RIGHT: ";
+//	ShiftElementRight(arr,size);
+//	return 0;
+//}
+
+
+//5.1: SHIFT ELEMENT BY -1: lEFT SHIFT
+
+//#include<iostream>
+//using namespace std;
+//
+//void ShiftElementRight(int arr[],int size){
+//	int temp=arr[0];     //First change
+//	for(int i=0;i<size;i++){    //change in looping
+//		arr[i]=arr[i+1];
+//	}
+//	arr[size-1]=temp;       //second change
+//	for(int i=0;i<size;i++){
+//		cout<<i<<":"<<arr[i]<<" ";
+//	}
+//}
+//
+//int main(){
+//	int arr[]={10,20,30,40,50,60};
+//	int size=6;
+//	cout<<"Before Shifting: ";
+//	for(int i=0;i<size;i++){
+//		cout<<i<<":"<<arr[i]<<" ";
+//	}
+//	cout<<endl<<"Shifted to  its LEFT: ";
+//	ShiftElementRight(arr,size);
+//	return 0;
+//}
+
+
+
+//6.SORTING 0s AND 1s 
+
+//THREE APPROACH: 1. COUNTING, 2. TWO POINTERS, 3. SORT()
+//I have used the Counting approach....
 #include<iostream>
 using namespace std;
 
-void TwoPairSum(int arr[],int n,int target){
-	bool flag=0;
-	for(int i=0;i<n;i++){
-		for(int j=i+1;j<n;j++){
-			if(arr[i]+arr[j]==target){
-				flag=1;
-				break;  //breaks the inner loop
-			}
-			
+void SortZeroesOnes(int arr[], int size){
+	int ZeroCount=0;
+	int OneCount=0;
+	for(int i=0;i<size;i++){
+		if(arr[i]==0){
+			ZeroCount++;
 		}
-		if(flag)
-		break;
-		
+		if(arr[i]==1){
+			OneCount++;
+		}
 	}
-	if(flag==1){
-		cout<<"Target is found"<<endl;
+	cout<<endl<<"No. of Zeroes: "<<ZeroCount<<endl;
+	cout<<"No. of Ones: "<<OneCount<<endl;
+	
+	cout<<"Array with sorted zeroes and ones: ";
+	int i=0;
+	while(ZeroCount--){   //this loop runs till ZeroCount becomes zero...
+		arr[i]=0;
+		i++;
 	}
-	if(flag==0){
-		cout<<"Target is not found"<<endl;
+	while(OneCount--){    //this loop runs till OneCount becomes zero...
+		arr[i]=1;
+		i++;
 	}
 	
+	for(int i=0;i<size;i++){
+		cout<<arr[i]<<" ";
+	}
+	
+
 }
+
 
 int main(){
-	int arr[]={0,-1,1,-3,2};
-	int n=5;
-	int target=-2;
-	TwoPairSum(arr,n,target);
+	int arr[]={1,0,0,1,0,1,0,1,1};
+	int size=9;
+//	cout<<"Array with sorted zeroes and ones: ";
+	SortZeroesOnes(arr,size);
 	return 0;
 }
-
-
-
-
 
 
 
