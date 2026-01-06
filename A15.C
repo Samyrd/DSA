@@ -61,5 +61,39 @@
 //}
 //}
 
+#include<stdio.h>
+//
+//int main(){
+//	int num,i;
+//	int a=-1,b=1,c;
+//	printf("Enter a number:");
+//	scanf("%d",&num);
+//	for(i=0;i<num;i++){
+//		c=a+b;
+//		printf("%d\t",c);
+//		a=b;
+//		b=c;
+//	}
+//	return 0;
+//}
+
+int main(){
+	int num,i;
+	int a=-1,b=1,c;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	while(c<=num){
+		c=a+b;
+		if(num==c){
+			printf("NUMBER IS IN SERIES");
+			break;
+		}
+		
+		a=b;
+		b=c;
+		num--;
+}
+	return 0;
+}
 
 
