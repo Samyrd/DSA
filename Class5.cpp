@@ -53,6 +53,4 @@ Types of variables in C++:
 
 */
 
-int main(){
-	
-}
+
