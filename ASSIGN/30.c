@@ -1,5 +1,5 @@
 
-
+/*
 //1.
 
 #include <stdio.h>
@@ -82,6 +82,7 @@ int main(){
 	return 0;
 }
 
+*/
 
 //4.
 #include<stdio.h>
@@ -94,7 +95,7 @@ int main(){
 	
 	for(i=0;i<5;i++){
 		for(j=0;j<4-i;j++){
-			if(arr[j]>arr[j+1]){
+			if(arr[j]>arr[j+1]){   //if(arr[j]<arr[j+1]...it will print in descending order. No need to run the loop for i=4 to i=0
 				temp=arr[j];
 				arr[j]=arr[j+1];
 				arr[j+1]=temp;
@@ -106,12 +107,16 @@ int main(){
 	for(i=4;i>=0;i--){
 		printf("%d ",arr[i]);
 	}
+//	
+//	for(i=0;i<=4;i++){
+//		printf("%d",arr[i]);
+//	}
 	
 	return 0;
 }
 
 
-
+/*
 //5.
 #include<stdio.h>
 int main(){
@@ -172,6 +177,8 @@ int main() {
 
     return 0;
 }
+
+*/
 
 
 
