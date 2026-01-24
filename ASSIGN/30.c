@@ -59,6 +59,7 @@ int main(){
 
 
 //3. 
+
 #include<stdio.h>
 int main(){
 	int i,j,arr[5],temp;
@@ -80,7 +81,6 @@ int main(){
 	printf("The second smallest number in the array is %d",arr[1]);
 	return 0;
 }
-
 
 
 //4.
@@ -139,6 +139,39 @@ int main(){
 	return 0;
 }
 
+
+//Two comapre two arrays:
+#include <stdio.h>
+
+int main() {
+    int arr1[5], arr2[5];
+    int i, flag = 1;
+
+    printf("Enter elements of first array:\n");
+    for (i = 0; i < 5; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter elements of second array:\n");
+    for (i = 0; i < 5; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    // Compare arrays
+    for (i = 0; i < 5; i++) {
+        if (arr1[i] != arr2[i]) {
+            flag = 0;
+            break;
+        }
+    }
+
+    if (flag == 1)
+        printf("Both arrays are equal");
+    else
+        printf("Arrays are not equal");
+
+    return 0;
+}
 
 
 
