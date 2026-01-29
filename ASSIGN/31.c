@@ -113,3 +113,24 @@ int main() {
         printf("%d ", arr[i]);
     return 0;
 }
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 1, 2, 2, 2, 3, 4, 4};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int duplicateCount = 0;
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] == arr[i - 1]) {
+            duplicateCount++;
+        }
+    }
+
+    cout << "Total number of duplicate elements: " << duplicateCount;
+    return 0;
+}
+
