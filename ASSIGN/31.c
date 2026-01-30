@@ -115,6 +115,7 @@ int main() {
 }
 
 
+
 #include <iostream>
 using namespace std;
 
@@ -134,3 +135,21 @@ int main() {
     return 0;
 }
 
+
+
+function checkEqual(a, b) {
+    // If lengths of array are not equal means
+    // array are not equal
+    if (a.length !== b.length) return false;
+    a.sort();
+    b.sort();
+    for (let i = 0; i < a.length; i++)
+        if (a[i] !== b[i])
+            return false;
+
+    // If all elements were same.
+    return true;
+}
+const a = [3, 5, 2, 5, 2];
+const b = [2, 3, 5, 5, 2];
+console.log(checkEqual(a, b) ? 'true' : 'false');
