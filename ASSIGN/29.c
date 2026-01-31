@@ -143,3 +143,25 @@ int main() {
     return 0;
 }
 
+///
+function checkEqual(a, b) {
+    const n = a.length, m = b.length;
+    if (n !== m)
+        return false;
+
+    const mp = {};
+    for (let num of a) {
+        mp[num] = (mp[num] || 0) + 1;
+    }
+
+    for (let num of b) {
+        if (!(num in mp) || mp[num] === 0)
+            return false;
+        mp[num]--;
+    }
+    return true;
+}
+const a = [3, 5, 2, 5, 2];
+const b = [2, 3, 5, 5, 2];
+
+console.log(checkEqual(a, b) ? 'true' : 'false');
