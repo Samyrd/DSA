@@ -265,7 +265,58 @@ int main()
     return 0;
 }
 
+#include <bits/stdc++.h>
+using namespace std;
 
+int isValid(string &s){
+
+    int n = s.size();
+
+    if (n < 7)
+        return false;
+        
+    // Using string stream to separate all
+    // the string from '.' and push back
+    // into vector like for ex -
+    vector<string> v;
+    stringstream ss(s);
+    while (ss.good()){
+        string substr;
+        getline(ss, substr, '.');
+        v.push_back(substr);
+    }
+
+    if (v.size() != 4)
+        return false;
+        
+    // Iterating over the generated vector of strings
+    for (int i = 0; i < v.size(); i++){
+        
+        string temp = v[i];
+
+        if (temp.size() > 1){
+            if (temp[0] == '0')
+                return false;
+        }
+
+        for (int j = 0; j < temp.size(); j++){
+            if (isalpha(temp[j]))
+                return false;
+        }
+        
+        // And lastly we are checking if the 
+        // number is greater than 255 or not
+        if (stoi(temp) > 255)
+            return false;
+    }
+    return true;
+}
+
+int main(){
+    string s = "128.0.0.1";
+    isValid(s) ? cout << "true" : cout << "false";
+    return 0;
+}
 
 // C program to rotate an array by
 // d elements
