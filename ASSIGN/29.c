@@ -232,7 +232,7 @@ char nonRep(string &s) {
 }
 
 int main() {
-    string s = "racecar";
+    string s = "Racecar";
     cout << nonRep(s);
     return 0;
 }
