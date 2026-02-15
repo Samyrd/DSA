@@ -488,3 +488,52 @@ int main() {
     
     return 0;
 }
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool areIsomorphic(string s1, string s2) {
+
+    int n = s1.length();
+
+    // Check every character of s1
+    for (int i = 0; i < n; i++) {
+        char c1 = s1[i];
+        char c2 = s2[i];
+
+        // Check all occurrences of c1 in s1
+        // and corresponding occurrences of c2 in s2
+        for (int j = 0; j < n; j++) {
+            
+            // If we find another occurrence of c1 in s1,
+            // it must match the corresponding character in s2
+            if (s1[j] == c1 && s2[j] != c2) {
+                return false;
+            }
+
+            // If we find another occurrence of c2 in s2,
+            // it must match the corresponding character in s1
+            if (s2[j] == c2 && s1[j] != c1) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    
+    string s1 = "aab";
+    string s2 = "xxy";
+
+    if(areIsomorphic(s1, s2)) {
+        cout << "true\n";
+    }
+    else {
+        cout << "false\n";
+    }
+
+    return 0;
+}
