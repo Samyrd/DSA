@@ -206,6 +206,85 @@ int main() {
     return 0;
 }
 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to find the shortest path to type
+// characters of str
+vector<string> printPath(string str) {
+    vector<string> result;
+
+    // Store positions of characters in the 5x5 grid
+    unordered_map<char, pair<int, int>> pos;
+    char ch = 'A';
+
+    // Fill positions for characters A to Y
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5 
+                  && ch <= 'Y'; j++, ch++) {
+                      
+            pos[ch] = {i, j};
+        }
+    }
+
+    // Position of 'Z' (last row, first column)
+    pos['Z'] = {5, 0};
+
+    // Start from 'A' at (0,0)
+    int x = 0, y = 0;
+
+    // Traverse each character in str
+    for (char c : str) {
+        
+        // Extract target position manually 
+        // (fix for C++14 compatibility)
+        int targetX = pos[c].first;
+        int targetY = pos[c].second;
+
+        // Move right if target is on the right
+        while (y < targetY) {
+            result.push_back("RIGHT");
+            y++;
+        }
+
+        // Move left if target is on the left
+        while (y > targetY) {
+            result.push_back("LEFT");
+            y--;
+        }
+
+        // Move down if target is below
+        while (x < targetX) {
+            result.push_back("DOWN");
+            x++;
+        }
+
+        // Move up if target is above
+        while (x > targetX) {
+            result.push_back("UP");
+            x--;
+        }
+
+        // Add "OK" when the target 
+        // character is reached
+        result.push_back("OK");
+    }
+
+    return result;
+}
+
+void printArr(vector<string> &arr) {
+    for (const string &step : arr) {
+        cout << step << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    
+    string str = "GFG";
+
 #include <stdio.h>
 
 int main() {
