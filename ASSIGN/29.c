@@ -285,6 +285,43 @@ int main() {
     
     string str = "GFG";
 
+#include<bits/stdc++.h>
+using namespace std;
+
+// function to calculate minimum numbers of characters
+// to be removed to make two strings anagram
+int remAnagram(string& s1, string& s2) {
+    
+    vector<int> cnt1(26, 0);
+    vector<int> cnt2(26, 0);
+
+    // count frequency of each character in first string
+    for (char ch: s1) {
+        cnt1[ch-'a']++;
+    }
+
+    // count frequency of each character in second string
+    for (char ch: s2) {
+        cnt2[ch-'a']++;
+    }
+
+    // traverse count arrays to find number of characters
+    // to be removed
+    int ans = 0;
+    
+    for (int i=0; i<26; i++)
+        ans += abs(cnt1[i] - cnt2[i]);
+        
+    return ans;
+}
+
+int main() {
+    string str1 = "bcadeh", str2 = "hea";
+    cout << remAnagram(str1, str2);
+    return 0;
+}
+
+
 #include <stdio.h>
 
 int main() {
