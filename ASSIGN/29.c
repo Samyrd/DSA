@@ -322,6 +322,26 @@ int main() {
 }
 
 
+
+// C++ program to insert a character at specific
+// position using Built in functions
+  
+#include <bits/stdc++.h>
+using namespace std;
+
+string insertChar(string &s, char c, int pos) {
+  
+    // Insert character at specified position
+    s.insert(s.begin() + pos, c);
+  	return s;
+}
+
+int main() {
+    string s = "Geeks";
+    cout << insertChar(s, 'A', 3);
+    return 0;
+}
+
 #include <stdio.h>
 
 int main() {
